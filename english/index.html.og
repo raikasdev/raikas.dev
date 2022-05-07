@@ -12,7 +12,7 @@
     <meta name="author" content="Roni Äikäs">
     <link rel="stylesheet" type="text/css" href="../index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="icon" href="data:,">
   </head> 
   <body> 
     <div id="console">
