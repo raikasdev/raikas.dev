@@ -21,7 +21,7 @@ if ($country != "Finland" AND !isset($_GET['noredir'])) {
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="Finnish">
     <meta name="author" content="Roni Äikäs">
-    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="/index.css">
   </head> 
   <body> 
     <div id="console">
