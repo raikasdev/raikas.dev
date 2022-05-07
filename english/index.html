@@ -1,16 +1,5 @@
 <!DOCTYPE html>
-<?php
-
-$response = file_get_contents('http://www.geoplugin.net/json.gp?ip='.$ipaddress);
-$data =  @json_decode($response);
-$country = $data->geoplugin_countryName;
-
-if ($country == "Finland" AND !isset($_GET['noredir'])) {
-    header("Location: https://raikas.dev/");
-    die();
-}
-?>
-<html lang="fi"> 
+<html lang="en"> 
   <head> 
     <title>Roni Äikäs - raikas.dev</title> 
 	  <meta charset="utf-8" />
@@ -21,10 +10,12 @@ if ($country == "Finland" AND !isset($_GET['noredir'])) {
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="Finnish">
     <meta name="author" content="Roni Äikäs">
-    <link rel="stylesheet" type="text/css" href="/index.css">
+    <link rel="stylesheet" type="text/css" href="../index.css">
   </head> 
   <body> 
     <div id="console">
+      <span id="a">guest@raikas.dev</span>:<span id="b">~</span><span id="c">$</span> setlang<br/><br/>
+      <a href="../">Suomeksi</a><br><br>
       <span id="a">guest@raikas.dev</span>:<span id="b">~</span><span id="c">$</span> cat about_me.txt<br/><br/>
       👋 Hello there! I'm Roni Äikäs, a <span id="age">13</span>-year-old software developer and hobbyist white hat hacker.<br/>
       I am also an <a href="https://mikroni.fi">entrepreneur</a>, and I create websites for small businesses with WordPress.<br/>

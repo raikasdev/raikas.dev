@@ -1,15 +1,5 @@
 <!DOCTYPE html>
-<?php
 
-$response = file_get_contents('http://www.geoplugin.net/json.gp?ip='.$ipaddress);
-$data =  @json_decode($response);
-$country = $data->geoplugin_countryName;
-echo $country;
-if ($country != "Finland" && !isset($_GET['noredir'])) {
-    header("Location: https://raikas.dev/english");
-    die();
-}
-?>
 <html lang="fi"> 
   <head> 
     <title>Roni Äikäs - raikas.dev</title> 
@@ -21,10 +11,12 @@ if ($country != "Finland" && !isset($_GET['noredir'])) {
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="language" content="Finnish">
     <meta name="author" content="Roni Äikäs">
-    <link rel="stylesheet" type="text/css" href="/index.css">
+    <link rel="stylesheet" type="text/css" href="index.css">
   </head> 
-  <body> 
+  <body>
     <div id="console">
+      <span id="a">guest@raikas.dev</span>:<span id="b">~</span><span id="c">$</span> setlang<br/><br/>
+      <a href="english">In English</a><br><br>
       <span id="a">guest@raikas.dev</span>:<span id="b">~</span><span id="c">$</span> cat about_me.txt<br/><br/>
       👋 Tervehdys! Olen Roni Äikäs, jämsäläinen <span id="age">13</span>-vuotias ohjelmoija ja harrastevalkohattuhakkeri.<br/>
       Olen myös <a href="https://mikroni.fi">pienyrittäjä</a> ja toteutan yrityksille mm. Wordpress-verkkosivuja.<br/>
