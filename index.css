@@ -49,4 +49,5 @@ a {
 
 ul {
   list-style-type: none; /* Remove bullets */
+  padding-inline-start: 0px;
 }
