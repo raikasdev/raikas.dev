@@ -5,8 +5,7 @@ $response = file_get_contents('http://www.geoplugin.net/json.gp?ip='.$ipaddress)
 $data =  @json_decode($response);
 $country = $data->geoplugin_countryName;
 echo $country;
-die();
-if ($country != "Finland" AND !isset($_GET['noredir'])) {
+if ($country != "Finland" && !isset($_GET['noredir'])) {
     header("Location: https://raikas.dev/english");
     die();
 }
