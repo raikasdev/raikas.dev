@@ -1,15 +1,25 @@
 <!DOCTYPE html>
+<?php
+
+$response = file_get_contents('http://www.geoplugin.net/json.gp?   ip='.$ipaddress);
+$data =  @json_decode($response);
+$country = $data->geoplugin_countryName;
+if ($country != "Finland" AND !isset($_GET['noredir'])) {
+    header("Location: https://raikas.dev/english");
+    die();
+}
+?>
 <html lang="fi"> 
   <head> 
     <title>Roni Äikäs - raikas.dev</title> 
-	<meta charset="utf-8" />
+	  <meta charset="utf-8" />
 	  <meta name="title" content="Roni Äikäs - raikas.dev">
-<meta name="description" content="Olen Roni Äikäs, jämsäläinen 13-vuotias ohjelmoija, harrastevalkohattuhakkeri ja pienyrittäjä, joka toteuttaa yrityksille mm. Wordpress-verkkosivuja.">
-<meta name="keywords" content="roni,roni äikäs,äikäs,raikasdev,raikas">
-<meta name="robots" content="index, follow">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<meta name="language" content="Finnish">
-<meta name="author" content="Roni Äikäs">
+    <meta name="description" content="Olen Roni Äikäs, jämsäläinen 13-vuotias ohjelmoija, harrastevalkohattuhakkeri ja pienyrittäjä, joka toteuttaa yrityksille mm. Wordpress-verkkosivuja.">
+    <meta name="keywords" content="roni,roni äikäs,äikäs,raikasdev,raikas">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="Finnish">
+    <meta name="author" content="Roni Äikäs">
     <link rel="stylesheet" type="text/css" href="index.css">
   </head> 
   <body> 
@@ -31,7 +41,6 @@
       <li>
       - <a href="https://testausserveri.fi">testausserveri.fi</a>, Suomen suurin tietotekniikasta kiinnostuneiden nuorten yhteisö <br/>
         <ul>
-          <li>- <a href="https://github.com/Testausserveri/testaustime">TestausTime-JS</a>, avoimen lähdekoodin ajanseurantasovelluksen ensimmäinen versio (JavaScript, NodeJS)<br/></li>
           <li>- <a href="https://github.com/emphatetics/empathy">Empathy</a>, Junction 2021-hackathonia varten tehty Discord-botti, joka mahdollistaa äänestyspohjaisen moderoinnin chat-alusta Discordissa. (JavaScript, NodeJS, discord.js)<br/></li>
         </ul>  
         </li>
